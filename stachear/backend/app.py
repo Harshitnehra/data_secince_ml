@@ -32,7 +32,7 @@ def predict():
     prediction = model.predict([processed_text])  # Pipeline handles TF-IDF
     result = le.inverse_transform(prediction)[0]  # Decode emotion name
     
-    return render_template("index.html", prediction_text=f"Detected Emotion: **{result}** 🎭")
+    return render_template("index.html", prediction_text=f"Detected Emotion: **{result}** ")
 
 if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1', port=5000)
