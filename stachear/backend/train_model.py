@@ -50,4 +50,4 @@ print(f"Accuracy: {accuracy:.4f}")
 pickle.dump(pipeline, open("emotion_pipeline.pkl", "wb"))
 pickle.dump(le, open("label_encoder.pkl", "wb"))
 
-print("Pipeline and LabelEncoder saved successfully ✅")
+print("Pipeline and LabelEncoder saved successfully ")
