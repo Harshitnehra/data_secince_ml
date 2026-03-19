@@ -33,18 +33,12 @@ query_vector = embeddings.embed_query(query)
 similarities = cosine_similarity([query_vector], doc_vectors)[0]
 
 # Step 5: Get most similar document
-most_similar_index = similarities.argmax()
+best_index = similarities.argmax()
+best_sentence = documents[best_index]
+best_score = similarities[best_index]
 
+# Output
 print("Query:", query)
-print("\nMost Similar Document:")
-print(documents[most_similar_index])
-
-print("\nSimilarity Scores:")
-for i, score in enumerate(similarities):
-    print(f"Doc {i}: {score:.4f}")
-
-top_k = 3
-top_indices = similarities.argsort()[-top_k:][::-1]
-
-for i in top_indices:
-    print(documents[i], similarities[i])
+print("\nMost Similar Sentence:")
+print(best_sentence)
+print("\nSimilarity Score:", round(best_score, 4))
